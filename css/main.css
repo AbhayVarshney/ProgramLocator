@@ -237,12 +237,12 @@ textarea.form-control {
 
 #page  .navbar-toggle, 
 .navbar-fixed-top .navbar-toggle {
-	border: 1px solid #A81C47;
+	border: 1px solid #AE634F;
 }
 
 #page .navbar-toggle .icon-bar, 
 .navbar-fixed-top .navbar-toggle .icon-bar {
-	background-color: #A81C47;
+	background-color: #AE634F;
 }
 
 .image-bg {
@@ -459,7 +459,7 @@ textarea.form-control {
 	#navigation .navbar-nav .open .dropdown-menu > .active > a,
 	#navigation .navbar-nav .open .dropdown-menu > .active > a:hover,
 	#navigation .navbar-nav .open .dropdown-menu > .active > a:focus {
-		background-color: #a81c47;
+		background-color: #AE634F;
 	}
 	
 	#navigation .navbar-nav .open .dropdown-menu > .disabled > a,
@@ -502,7 +502,7 @@ textarea.form-control {
 	}
 
 	#navigation .navbar-nav > li > a:hover {
-		color: #a81c47;
+		color: #AE634F;
 	}
 	
 	#page #navigation .navbar-nav > li > a:hover, 
@@ -513,7 +513,7 @@ textarea.form-control {
 	#navigation .navbar-fixed-top .navbar-right .dropdown-menu li.active > a, 
 	#page #navigation .navbar .navbar-right .dropdown-menu li.active > a {
 		color: #fff;
-		background-color:#A81C47;
+		background-color:#AE634F;
 	}
 	#navigation .navbar-fixed-top .navbar-right li.active > a {
 		color:#000;
@@ -559,7 +559,6 @@ textarea.form-control {
 		color: #fff;
 	}
 
-	/*Dropdown Menu*/
 	#navigation .dropdown-menu { 
 		padding: 0;
 		border: none;
@@ -570,7 +569,7 @@ textarea.form-control {
 	}
 
 	#navigation .dropdown-menu li a { 
-		color: #a81c47; 
+		color: #AE634F; 
 		font-size:13px;
 		padding: 12px 17px; 
 		border-bottom: solid 1px #f1f1f1;
@@ -581,8 +580,8 @@ textarea.form-control {
 	#navigation .dropdown-menu li > a:hover {
 		color: #fff;
 		filter: none !important;
-		background-color: #a81c47 !important;
-		border-bottom: solid 1px #a81c47;
+		background-color: #AE634F` !important;
+		border-bottom: solid 1px #AE634F;
 		-webkit-transition: all 0.1s ease-in-out;
 		-moz-transition: all 0.1s ease-in-out;
 		-o-transition: all 0.1s ease-in-out;
@@ -774,9 +773,8 @@ textarea.form-control {
 ================================*/
 #home-section {
 	height:650px;
-	background-color:#CD3057;
-	background-image:url(../images/banner.jpg);
-	background-repeat:no-repeat;
+	background-color:#ffffff;
+	background-image:url(../images/banner2.png);
 	background-size:cover;
 	position:relative;
 }
@@ -794,7 +792,7 @@ textarea.form-control {
 	font-size: 35px;
 	text-transform: uppercase;
 	background-color: #fff;
-	color: #a81c47;
+	color: #AE634F;
 	margin-bottom:0;
 	font-weight: 900;
 	display: inline-block;
