@@ -1,13 +1,54 @@
-DOCTYPE<html>
-<header><h1>Email to superswarm76@gmail.com</h1></header>
-
-	<body>
-		<h2>The following credentials are needed:</h2>
+<html>
+<head>
+	<title>SRF - Summer Research Finder</title>
+	<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+		<h1><center> SRF - Summer Research Finder </center></h1>
+		<h2><em>The following credentials are needed:</em></h2>
 		<ul>
+			<h3><em>General Information</em></h3>
 			<li>Your first name</li>
+			<input id="firstname"></input>
 			<li>Your last name</li>
+			<input id="lastname"></input>
 			<li>Your email</li>
+			<input id="email"></input>
+			<li>Professor's Last Name</li>
+			<input id ="professorslastname"></input>
+			<li>Name of University or Institution</li>
+			<input id ="nameofuniversityorinstitution"></input>
+			<li>Grade Level (Freshman, Sophomore, Junior, Senior)</li>
+			<input id ="grade level"></input>
+			<li>Current City Residing In</li>
+			<input id ="currentcityresidingin"></input>
+			<li>State Residing In</li>
+			<input id ="stateresidingin"></input>
+			<li>Field of Interest</li>
+			<input id ="fieldofinterest"></input>
+			<h3><em>Experiences</em></h3>
+			<li>List all experience you have in your chosen field:</li>
+			<textarea rows="4" cols="50">
+		    </textarea>
+		    <h3><em>Other Information</em></h3> 
+			<li>List any programming languages you are familiar with. (e.g. HTML, JavaScript, CSS, MAT-Lab, Python, Java, C++, R, Ruby on Rails, Pearl, C). Please place commas between different languages (if you have more than one to mention).</li>
+			<textarea rows="4" cols="50">
+		    </textarea>
+			<h2>What times are you available during the day?</h2>
+			<li>Starting Time</li>
+			<input id ="starting time"></input>
+
+
+
+			<br><br><br><button id="submit">Submit</button>
+
+			<script>
+			$( document ).ready(function() {
+			    $("#submit").click(function(){
+			    	alert($("#fieldofinterest").val());
+			    });
+			});
+			</script>
 		</ul>	
 	</body>
-
 </html>
