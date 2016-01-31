@@ -329,14 +329,17 @@ function signup() {
 	var zipcode = $("#zipcode").val();
 	var isStudent = false;
 	var isTeacher = false;
+	var type = "";
 	var allConditionsSatisfied = true;
 
 	if(document.getElementById('isStudent').checked) {
 		isStudent = true;
+		type = "student";
 	}
 
 	if(document.getElementById('isTeacher').checked) {
 		isTeacher = true;
+		type = "teacher";
 	}
 
 	console.log("Name: "  + name);
@@ -393,6 +396,23 @@ function signup() {
 			    window.alert("Uh oh! There seems to be something wrong. " + error);
 			  } else {
 			    console.log("Successfully created user account with uid:", userData.uid);
+		    	
+			    var usersRef = ref.child("Users");
+			    var userRef2 = usersRef.child(name);
+			    userRef2.set({
+				  	Name: name,
+				    Username: username,
+				    Zipcode: zipcode,
+				    Type: type,
+				    Logged In : true
+				}, function(error, userData) {
+					if(error) {
+						window.alert("Not Working " + error);
+					} else {
+						window.alert("works!");
+					}
+				});
+
 			    if(isTeacher) {
 			    	window.location.replace("dashboard-teacher.html");
 			    } else {
