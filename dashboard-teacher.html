@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<!--title-->
-    <title> Dashboard </title>
+    <title> Dashboard -- Teacher</title>
 	
 	<!--CSS-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 		<div class="navbar" role="banner">
 			<div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="dashboard-teacher.html">
 						<img class="logo-two img-responsive" src="images/logo2.png" alt="">
                     	<br/>
 						<img class="main-logo img-responsive" src="images/header.png" alt="">
@@ -37,9 +37,9 @@
                 </div>  
                 <nav id="main-menu" class="collapse navbar-collapse navbar-right">         
                     <ul class="nav navbar-nav">
-						<li><a class="ion-home" class="menu-top" href="index.html"> &nbsp;&nbsp; Home </a></li>
-                        <li><a class="ion-flash" class="menu-top" href="#welcome-section"> &nbsp;&nbsp; How to use it? </a></li>
-						<li><a class="ion-help-buoy" class="menu-top" href="#promotion"> &nbsp;&nbsp; About Us </a></li>
+						<li><a class="ion-home" class="menu-top" href="dashboard-teacher.html"> &nbsp;&nbsp; Home </a></li>
+                        <li><a class="ion-flash" class="menu-top" href="index.html#welcome-section"> &nbsp;&nbsp; How to use it? </a></li>
+						<li><a class="ion-help-buoy" class="menu-top" href="index.html#promotion"> &nbsp;&nbsp; About Us </a></li>
                         <li><a class="ion-paper-airplane" class="menu-top" href="fsda">&nbsp;&nbsp; Contact </a></li>
                     </ul>         
                 </nav>
@@ -55,12 +55,23 @@
     
 	<div id="home-section">
 		<div class="container">
+			<div id="showUsername" onclick="showUsername()"></div>
 			<div class="home-content text-center">
 				<h1 style="position: relative; top: -100px;">Dashboard</h1>
 			</div>
+
+			<div class="settings text-center">
+				<a class="ion-gear-a" onclick="logout()" href="index.html" style="position: relative; top: 180px; left: -305px; color: white; font-size: 24px; border-size: 2px"> &nbsp; Settings </a>
+			</div>	
+
+			<div class="logout text-center">
+				<a class="ion-log-out" onclick="logout()" href="index.html" style="position: relative; top: 145px; left: 300px; color: white; font-size: 24px; border-size: 2px"> &nbsp; Logout </a>
+			</div>	
+
+			<input style="position: relative; top: 400px; left: 100px"type="file" name="uploadField" />
 		</div>
 	</div>
-		
+
     <div id="welcome-section" class="padding">
 		<div class="container">
 			<div class="text-center section-title">

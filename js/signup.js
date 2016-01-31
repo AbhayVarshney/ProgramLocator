@@ -326,12 +326,49 @@ function signup() {
 	var username = $("#username").val();
 	var password = $("#password").val();
 	var retypepassword = $("#password2").val();
+	var zipcode = $("#zipcode").val();
+	var isStudent = false;
+	var isTeacher = false;
+	var allConditionsSatisfied = true;
+
+	if(document.getElementById('isStudent').checked) {
+		isStudent = true;
+	}
+
+	if(document.getElementById('isTeacher').checked) {
+		isTeacher = true;
+	}
 
 	console.log("Name: "  + name);
 	console.log("Username: "  + username);
 	console.log("Password: "  + password);
 	console.log("Retype Password: " + retypepassword);
+	console.log("zipcode: " + zipcode);
+	console.log("isStudent: " + isStudent); // boolean
+	console.log("isTeacher: " + isTeacher); // boolean
 
+	// check if all inputs are filled out correctly!
+	if(name.length == 0) {
+		allConditionsSatisfied = false;
+		window.alert("Please input a name!");
+	} else if(username.length == 0 ) {
+		allConditionsSatisfied = false;
+		window.alert("Please input a username!");
+	} else if(password.length == 0) {
+		allConditionsSatisfied = false;
+		window.alert("Please input a password!")
+	} else if(zipcode.length == 0) {
+		allConditionsSatisfied = false;
+		window.alert("Please input a zipcode!")
+	} else if(isTeacher == isStudent) {
+		allConditionsSatisfied = false;
+		window.alert("Are you a teacher or a student?")
+	} else if(zipcode.length != 5) {
+		allConditionsSatisfied = false;
+		window.alert("Please input a correct zipecode")
+	}
+
+	// check if username has @ symbol
 	var validUsername = false; 
 	for(var i = 0; i < username.length; i++) {
 		if(username.charAt(i) == '@') {
@@ -339,12 +376,13 @@ function signup() {
 		}
 	}
 
-	if(!validUsername) {
+	if(!validUsername || !allConditionsSatisfied) {
 		console.log("Not a valid username!");
 		window.alert("Please input a valid email!");
 	} else {
 		if(password == retypepassword && validUsername) {
 			console.log("Success!");
+			// READY TO SEND TO FIREBASE
 			var ref = new Firebase("https://summerprogramlocator.firebaseio.com/");
 			ref.createUser({
 			  email    : username,
@@ -355,7 +393,11 @@ function signup() {
 			    window.alert("Uh oh! There seems to be something wrong. " + error);
 			  } else {
 			    console.log("Successfully created user account with uid:", userData.uid);
-			    window.location.replace("dashboard.html");
+			    if(isTeacher) {
+			    	window.location.replace("dashboard-teacher.html");
+			    } else {
+			    	window.location.replace("dashboard-student.html");
+			    }
 			  }
 			});
 		} else {

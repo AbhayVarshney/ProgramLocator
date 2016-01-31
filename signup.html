@@ -13,18 +13,21 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/magnific-popup.css" rel="stylesheet">
 	<link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/signup.css" rel="stylesheet">
 	<link href="css/tr-animation.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">	
 	<link rel="icon" href="images/favicon.png">
 
 	<!-- Ion Icons --> 
 	<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">	
+
+	<!-- Polymer Projects -->
+    <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
 	
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,900' rel='stylesheet' type='text/css'>
 </head>
-<body style="overflow-y:hidden; overflow-x:hidden">
+<body style="overflow-x:hidden; overflow-y:hidden">
 	<header id="navigation">
 		<div class="container">
             <div class="navbar-header">
@@ -37,9 +40,9 @@
             <nav id="main-menu" class="collapse navbar-collapse navbar-right">         
                 <ul class="nav navbar-nav">
 					<li><a class="ion-home" class="menu-top" href="index.html"> &nbsp;&nbsp; Home </a></li>
-                    <li><a class="ion-flash" class="menu-top" href="index.html"> &nbsp;&nbsp; How to use it? </a></li>
-					<li><a class="ion-help-buoy" class="menu-top" href="about-us.html"> &nbsp;&nbsp; About Us </a></li>
-                    <li><a class="ion-paper-airplane" class="menu-top" href="contact.html">&nbsp;&nbsp; Contact </a></li>
+                    <li><a class="ion-flash" class="menu-top" href="index.html#welcome-section"> &nbsp;&nbsp; How to use it? </a></li>
+					<li><a class="ion-help-buoy" class="menu-top" href="index.html#promotion"> &nbsp;&nbsp; About Us </a></li>
+                    <li><a class="ion-paper-airplane" class="menu-top" href="fsda">&nbsp;&nbsp; Contact </a></li>
                 </ul>         
             </nav>
         </div>
@@ -54,28 +57,26 @@
 	<div id="home-section">
 		<div class="container">
 			<div class="home-content text-center">
-				<h1 style="position: relative; top: -100px;">Sign Up!</h1>
+				<h1 style="position: relative; top: -200px;">Sign Up!</h1>
 			</div>
 			<center>
 				<div class="userSignUp" style="position: relative; top: 350px;">
-
-					<input id="name" type="text" class="form-control" name="username" style="width: 400px; border-radius: 7px; position: relative; top: -80px;" placeholder="Name" required=""/>
-					<input id="username" type="text" class="form-control" name="username" style="width: 400px; border-radius: 7px; position: relative; top: -65px;" placeholder="Email Address" required=""/>
-				    <input id="password" type="password" class="form-control" style="width: 400px; position: relative; top: -50px; border-radius: 7px;"name="password" placeholder="Password" required=""/>  
-				    <input id="password2" type="password" class="form-control" style="width: 400px; position: relative; top: -35px; border-radius: 7px;"name="password" placeholder="Re-Type Password" required=""/>  
-			    	<br/>
+					<input id="name" type="text" class="form-control" name="username" style="width: 400px; border-radius: 7px; position: relative; top: -100px;" placeholder="Name" required/>
+					<input id="username" type="text" class="form-control" name="username" style="width: 400px; border-radius: 7px; position: relative; top: -85px;" placeholder="Email Address" required/>
+				    <input id="password" type="password" class="form-control" style="width: 400px; position: relative; top: -70px; border-radius: 7px;"name="password" placeholder="Password" required/>  
+				    <input id="password2" type="password" class="form-control" style="width: 400px; position: relative; top: -55px; border-radius: 7px;"name="password" placeholder="Re-Type Password" required/>
+			    	<!-- Personal Information --> 
+				    <input id="zipcode" type="text" class="form-control" style="width: 140px; position: relative; top: -40px; border-radius: 7px;"name="zipcode" placeholder="Your Zip Code" required/> 
+				    <div id="checkIfStudent" style="position: relative; left: -100px; color: white; font-size: 20px;"> 
+				    	<paper-checkbox id="isStudent"></paper-checkbox> &nbsp; &nbsp; &nbsp; <strong> Student? </strong>
+				    </div>
+				    <div id="checkIfTeacher" style="position: relative; left: 100px; top: -27px; color: white; font-size: 20px; width: 200px;"> 
+				    	<paper-checkbox id="isTeacher"></paper-checkbox> &nbsp; &nbsp; &nbsp; <strong> Teacher? </strong>
+				    </div>
 				    <button class="btn btn-lg btn-primary btn-block" id="signup" type="submit" style="width: 200px; border-color: white; color: #AE634F; background-color: white;" onclick="signup()"><strong>Sign Up</strong></button> </div>
 		 	</center>
 		</div>
 	</div>
-	
-	<footer id="footer">			
-		<div id="footer-bottom">
-			<div class="container text-center">
-				<p>Created by <strong> Abhay Varshney </strong> and <strong> Omkar Sakhawalkar</strong>. All Rights Reserved.</p>
-			</div>			
-		</div>
-	</footer>
 	
 	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>

@@ -330,15 +330,38 @@ function login() {
 	// call firebase
 	var ref = new Firebase("https://summerprogramlocator.firebaseio.com/");
 	ref.authWithPassword({
-	  email    : username,
-	  password : password
+		email    : username,
+		password : password
+
+		var usersRef = ref.child("users");
+		usersRef.set({
+			alanisawesome: {
+				date_of_birth: "June 23, 1912",
+				full_name: "Alan Turing"
+			},
+		});
 	}, function(error, authData) {
 	  if (error) {
 	    console.log("Login Failed!", error);
 	    window.alert("Please try again!");
 	  } else {
 	    console.log("Authenticated successfully with payload:", authData);
-	    window.location.replace("dashboard.html");
+	    
+	    // MUST GRAB BOOLEAN THAT TELLS US WHETHER USER IS A STUDENT OR TEACHER>
+	    window.location.replace("dashboard-student.html");
 	  }
+	});
+}
+
+function logout() {
+	// must also have variable that says that you are logged out.
+	ref.unauth();
+}
+
+function showUsername() {
+	ref.on("value", function(snapshot) {
+	  console.log(snapshot.val());
+	}, function (errorObject) {
+	  console.log("The read failed: " + errorObject.code);
 	});
 }
