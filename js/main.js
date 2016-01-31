@@ -322,3 +322,8 @@ jQuery(function ($) {
 	
 	
 });
+
+document.getElementById("login").addEventListener("click", function(){
+    alert("login button clicked");
+    
+});
