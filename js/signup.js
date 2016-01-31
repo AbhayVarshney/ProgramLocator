@@ -320,25 +320,47 @@ jQuery(function ($) {
 	}());
 });
 
-// LOGIN SYSTEM!!!
-function login() {
+// CREATING A USER!!!
+function signup() {
+	var name = $("#name").val();
 	var username = $("#username").val();
 	var password = $("#password").val();
+	var retypepassword = $("#password2").val();
+
+	console.log("Name: "  + name);
 	console.log("Username: "  + username);
 	console.log("Password: "  + password);
+	console.log("Retype Password: " + retypepassword);
 
-	// call firebase
-	var ref = new Firebase("https://summerprogramlocator.firebaseio.com/");
-	ref.authWithPassword({
-	  email    : username,
-	  password : password
-	}, function(error, authData) {
-	  if (error) {
-	    console.log("Login Failed!", error);
-	    window.alert("Please try again!");
-	  } else {
-	    console.log("Authenticated successfully with payload:", authData);
-	    window.location.replace("https://google.com");
-	  }
-	});
+	var validUsername = false; 
+	for(var i = 0; i < username.length; i++) {
+		if(username.charAt(i) == '@') {
+			validUsername = true;
+		}
+	}
+
+	if(!validUsername) {
+		console.log("Not a valid username!");
+		window.alert("Please input a valid email!");
+	} else {
+		if(password == retypepassword && validUsername) {
+			console.log("Success!");
+			var ref = new Firebase("https://summerprogramlocator.firebaseio.com/");
+			ref.createUser({
+			  email    : username,
+			  password : password
+			}, function(error, userData) {
+			  if (error) {
+			    console.log("Error creating user:", error);
+			    window.alert("Uh oh! There seems to be something wrong. " + error);
+			  } else {
+			    console.log("Successfully created user account with uid:", userData.uid);
+			    window.location.replace("dashboard.html");
+			  }
+			});
+		} else {
+			console.log("Please type your password again!");
+			window.alert("Your passwords don't match. Please try again!");
+		}
+	}
 }
