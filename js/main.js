@@ -333,20 +333,20 @@ function login() {
 		email    : username,
 		password : password
 
-		var usersRef = ref.child("users");
-		usersRef.set({
-			alanisawesome: {
-				date_of_birth: "June 23, 1912",
-				full_name: "Alan Turing"
-			},
-		});
+		// var usersRef = ref.child("users");
+		// usersRef.set({
+		// 	alanisawesome: {
+		// 		date_of_birth: "June 23, 1912",
+		// 		full_name: "Alan Turing"
+		// 	},
+		// });
 	}, function(error, authData) {
 	  if (error) {
 	    console.log("Login Failed!", error);
 	    window.alert("Please try again!");
 	  } else {
 	    console.log("Authenticated successfully with payload:", authData);
-	    
+
 	    // MUST GRAB BOOLEAN THAT TELLS US WHETHER USER IS A STUDENT OR TEACHER>
 	    window.location.replace("dashboard-student.html");
 	  }
@@ -365,3 +365,17 @@ function showUsername() {
 	  console.log("The read failed: " + errorObject.code);
 	});
 }
+
+$(function () {
+    $(":file").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $('#myImg').attr('src', e.target.result);
+};

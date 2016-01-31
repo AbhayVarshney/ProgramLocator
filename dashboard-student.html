@@ -44,12 +44,6 @@
                     </ul>         
                 </nav>
             </div>
-			<div class="search">
-				<form role="form">
-				<input type="text" class="search-form" autocomplete="off" placeholder="Write something and press enter">
-				<span class="search-close"><i class="fa fa-times"></i></span>
-				</form>
-			</div>
         </div>
     </header>
     
@@ -67,8 +61,10 @@
 			<div class="logout text-center">
 				<a class="ion-log-out" onclick="logout()" href="index.html" style="position: relative; top: 145px; left: 300px; color: white; font-size: 24px; border-size: 2px"> &nbsp; Logout </a>
 			</div>	
-
-			<input style="position: relative; top: 400px; left: 100px"type="file" name="uploadField" />
+			<div class="container" style="position: relative; top: 200px;">
+				<input type='file' />
+				<img id="myImg" src="#" alt="your image" />
+			</div>
 		</div>
 	</div>
 
