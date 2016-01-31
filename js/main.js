@@ -338,7 +338,7 @@ function login() {
 	    window.alert("Please try again!");
 	  } else {
 	    console.log("Authenticated successfully with payload:", authData);
-	    window.location.replace("https://google.com");
+	    window.location.replace("dashboard.html");
 	  }
 	});
 }
