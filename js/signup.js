@@ -404,7 +404,7 @@ function signup() {
 				    Username: username,
 				    Zipcode: zipcode,
 				    Type: type,
-				    Logged In : true
+				    LoggedIn : true
 				}, function(error, userData) {
 					if(error) {
 						window.alert("Not Working " + error);
