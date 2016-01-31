@@ -320,42 +320,11 @@ jQuery(function ($) {
 	}());
 });
 
-// LOGIN SYSTEM!!!
-function login() {
-	var username = $("#username").val();
-	var password = $("#password").val();
-	console.log("Username: "  + username);
-	console.log("Password: "  + password);
-
-	// call firebase
-	var ref = new Firebase("https://summerprogramlocator.firebaseio.com/");
-	ref.authWithPassword({
-		email    : username,
-		password : password
-
-		// var usersRef = ref.child("users");
-		// usersRef.set({
-		// 	alanisawesome: {
-		// 		date_of_birth: "June 23, 1912",
-		// 		full_name: "Alan Turing"
-		// 	},
-		// });
-	}, function(error, authData) {
-	  if (error) {
-	    console.log("Login Failed!", error);
-	    window.alert("Please try again!");
-	  } else {
-	    console.log("Authenticated successfully with payload:", authData);
-
-	    // MUST GRAB BOOLEAN THAT TELLS US WHETHER USER IS A STUDENT OR TEACHER>
-	    window.location.replace("dashboard-student.html");
-	  }
-	});
-}
-
 function logout() {
 	// must also have variable that says that you are logged out.
-	ref.unauth();
+	var logout = new Firebase("https://summerprogramlocator.firebaseio.com/");
+	logout.unauth();
+	window.location.replace("index.html");
 }
 
 function showUsername() {
@@ -365,3 +334,31 @@ function showUsername() {
 	  console.log("The read failed: " + errorObject.code);
 	});
 }
+
+function feasible(){
+	var check = new Firebase("https://summerprogramlocator.firebaseio.com/");
+	var authData = check.getAuth();
+	if (authData) {
+  		console.log("Authenticated user with uid:", authData.uid);
+	} else {
+		alert("You are not logged in yet! Please login!");
+		window.location.replace("index.html");
+	}
+}
+
+function check() {
+	var isSurvey;
+
+	if(document.getElementById('surveyCheckBox').checked) {
+		isApplication = false;
+	} else {
+		isApplication = true;
+	}
+	if(isApplication) {
+		document.getElementById ("completed").style.display = "block";
+	} else {
+		document.getElementById ("completed").style.display = "none";
+	}
+
+}
+
